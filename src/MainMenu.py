@@ -1,4 +1,6 @@
 import SortsMain
+import cProfile
+import sys
 
 def mostrar_menu():
     print("1. Comenzar a ordenar los números")
@@ -11,7 +13,11 @@ def elegir_direccion():
     opcion = input("Seleccione una opción (1/2): ")
     return opcion
 
-def main():
+def ordenar_numeros_con_perfil(direccion_str):
+    # Esta es la función que se perfilará si se activa el modo de perfilado.
+    SortsMain.ordenar_numeros_main(direccion_str)
+
+def main(perfilado=False):
     while True:
         mostrar_menu()
         opcion = input("Seleccione una opción: ")
@@ -19,7 +25,13 @@ def main():
         if opcion == "1":
             direccion = elegir_direccion()
             direccion_str = 'ascendente' if direccion == "1" else 'descendente'
-            SortsMain.ordenar_numeros_main(direccion_str)
+            
+            if perfilado:
+                # Ejecutar con perfilado
+                cProfile.runctx('ordenar_numeros_con_perfil(direccion_str)', globals(), locals())
+            else:
+                # Ejecución normal
+                SortsMain.ordenar_numeros_main(direccion_str)
 
         elif opcion == "2":
             print("Saliendo del programa...")
@@ -28,4 +40,5 @@ def main():
             print("Opción no válida. Por favor, intente de nuevo.")
 
 if __name__ == "__main__":
-    main()
+    perfilado = '--perfil' in sys.argv  # Comprobar si se ha pasado el argumento '--perfil'
+    main(perfilado)

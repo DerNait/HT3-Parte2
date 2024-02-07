@@ -1,0 +1,37 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Profile with Austin",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/SortsMain.py",
+            "args": [],
+            "console": "integratedTerminal",
+            "env": {
+                "AUSTIN_OUTPUT": "${workspaceFolder}/profile.austin"
+            },
+            "linux": {
+                "runtimeExecutable": "austin",
+                "runtimeArgs": [
+                    "-o", "${workspaceFolder}/profile.austin",
+                    "--pipe", "python"
+                ]
+            },
+            "windows": {
+                "runtimeExecutable": "austin",
+                "runtimeArgs": [
+                    "-o", "${workspaceFolder}/profile.austin",
+                    "--pipe", "python"
+                ]
+            },
+            "osx": {
+                "runtimeExecutable": "austin",
+                "runtimeArgs": [
+                    "-o", "${workspaceFolder}/profile.austin",
+                    "--pipe", "python"
+                ]
+            }
+        }
+    ]
+}
