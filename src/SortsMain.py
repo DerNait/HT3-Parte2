@@ -15,6 +15,12 @@ def cargar_numeros(archivo):
 
 # Modificar la lista de funciones para envolver quicksort en una función lambda o definida por el usuario
 def ordenar_numeros(numeros, direccion='ascendente'):
+    '''
+    Se pidio ayuda a ChatGPT en esta parte para poder realizar el ordenamiento de los numeros llamando a cada metodo de las clases proveidas por mis compañeros,
+    los cuales incluyen todos los sorts a utilizar a continuacion. La pregunta fue la siguiente: 
+    Tengo diferentes clases Python que funcionan para sortear arreglos numericos, los cuales son gnome, heapsort, mergeSort, quicsort, selection sort, shell sort y radix. Como
+    puedo mandar a llamar esas funciones en mi clase principal para que todos ordenen el mismo arreglo cargado de un archivo txt? 
+    '''
     sort_functions = [
         ("Gnome Sort", gnome_sort),
         ("Heap Sort", heap_sort),

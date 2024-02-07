@@ -2,6 +2,10 @@ import SortsMain
 import cProfile
 import sys
 
+'''
+Se le pregunto a la IA lo siguiente: Como hago un cProfile para mi siguiente codigo: [Se inserto el codigo del menu aquí]
+'''
+
 def mostrar_menu():
     print("1. Comenzar a ordenar los números")
     print("2. Salir")
