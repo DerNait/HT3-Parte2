@@ -23,31 +23,3 @@ def selection_sort(arr, ascending=True):
 
         # Intercambiar el elemento extremo encontrado con el primer elemento no ordenado
         arr[i], arr[extreme_index] = arr[extreme_index], arr[i]
-
-# Generar una lista de 3000 números al azar en el rango de 0 a 1000 y guardarlos en un arreglo
-random_numbers = [random.randint(0, 1000) for _ in range(3000)]
-
-print("Lista original:")
-print(random_numbers)
-
-# Copiar la lista original para tener una referencia antes de la ordenación
-original_copy = random_numbers.copy()
-
-# Permitir al usuario elegir la dirección de la ordenación
-order_choice = input("\n¿Quieres ordenar la lista ascendente (A) o descendentemente (D)? ").upper()
-
-# Validar la elección del usuario
-if order_choice == 'A':
-    selection_sort(random_numbers, ascending=True)
-    print("\nLista ordenada de forma ascendente:")
-elif order_choice == 'D':
-    selection_sort(random_numbers, ascending=False)
-    print("\nLista ordenada de forma descendente:")
-else:
-    print("\nOpción no válida. Se ordenará de forma ascendente por defecto.")
-
-print(random_numbers)
-
-# Mostrar la lista original para comparar
-#print("\nLista original (sin modificar):")
-#print(original_copy)
