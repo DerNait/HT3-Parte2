@@ -14,7 +14,7 @@ def cargar_numeros(archivo):
     return numeros
 
 # Modificar la lista de funciones para envolver quicksort en una función lambda o definida por el usuario
-def ordenar_numeros(numeros):
+def ordenar_numeros(numeros, direccion='ascendente'):
     sort_functions = [
         ("Gnome Sort", gnome_sort),
         ("Heap Sort", heap_sort),
@@ -29,18 +29,22 @@ def ordenar_numeros(numeros):
     resultados = {}
     for nombre, funcion in sort_functions:
         copia_numeros = numeros[:]  # Hacer una copia para no modificar la lista original
-        if nombre != "Quick Sort":  # Quick Sort ya fue ejecutado durante la definición de la lambda
-            funcion(copia_numeros)  # Se asume que la función modifica la lista in-place
+        funcion(copia_numeros)  # Aplicar el algoritmo de ordenamiento
+        if direccion == 'descendente':  # Invertir si se pide orden descendente
+            copia_numeros.reverse()
         resultados[nombre] = copia_numeros
     return resultados
 
-
-# Main
-if __name__ == "__main__":
-    archivo_numeros = "numeros_aleatorios.txt"  # Asegúrate de ajustar el nombre de archivo según corresponda
+# Función principal para iniciar el proceso de ordenamiento
+def ordenar_numeros_main(direccion='ascendente'):
+    archivo_numeros = "numeros_aleatorios.txt"  # Ajustar el nombre de archivo según corresponda
     numeros = cargar_numeros(archivo_numeros)
-    resultados = ordenar_numeros(numeros)
+    resultados = ordenar_numeros(numeros, direccion)
 
-    # Opcional: imprimir los resultados
+    # Imprimir los resultados
     for nombre, numeros_ordenados in resultados.items():
-        print(f"{nombre}: {numeros_ordenados[:10]}...")  # Imprime solo los primeros 10 para brevedad
+        print(f"{nombre}: {numeros_ordenados[:10]}...")  # Imprimir solo los primeros 10 para brevedad
+
+if __name__ == "__main__":
+    # Ejecutar con la dirección por defecto (ascendente) si se ejecuta directamente
+    ordenar_numeros_main()

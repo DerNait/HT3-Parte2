@@ -23,9 +23,3 @@ def quicksort(arr, low, high):
         # Ordena los elementos antes y después del pivote
         quicksort(arr, low, pi-1)
         quicksort(arr, pi+1, high)
-
-# Ejemplo de uso:
-lista = [3, 6, 8, 10, 1, 2, 1]
-print("Lista original:", lista)
-quicksort(lista, 0, len(lista) - 1)
-print("Lista ordenada:", lista)

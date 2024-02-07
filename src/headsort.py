@@ -27,10 +27,4 @@ def heap_sort(arr):
         arr[i], arr[0] = arr[0], arr[i]  # Intercambiar el máximo con el último elemento
         heapify(arr, i, 0)
 
-# Ejemplo de uso:
-lista_de_numeros = random.sample(range(1, 500), 100)
-print("Lista desordenada: ", lista_de_numeros)
-heap_sort(lista_de_numeros)
-print("Lista ordenada:", lista_de_numeros)
-
 

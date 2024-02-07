@@ -15,10 +15,4 @@ def shell_sort(arr): #La primera línea define una función llamada shell_sort q
                 j -= gap
             arr[j] = temp 
         gap //= 2 #divide gap por 2 para reducir el tamaño de las sub-listas.
-        return arr #La última línea devuelve la lista ordenada.
-
-# Ejemplo de uso
-arr = [12, 34, 54, 2, 3]
-print("Lista original: ", arr)
-shell_sort(arr)
-print("Lista ordenada: ", arr)
+    return arr #La última línea devuelve la lista ordenada.

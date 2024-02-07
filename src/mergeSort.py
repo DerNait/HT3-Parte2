@@ -31,10 +31,3 @@ def merge_sort(arr):
             k += 1
 
     return arr
-
-# Ejemplo de uso del algoritmo de Merge Sort
-data_to_sort = [8, 3, 1, 7, 0, 10, 4]
-data_to_sort_copy = list(data_to_sort)  # Crear una copia de la lista original
-sorted_data = merge_sort(data_to_sort_copy)
-print("Lista Original:", data_to_sort)
-print("Lista Ordenada:", sorted_data)

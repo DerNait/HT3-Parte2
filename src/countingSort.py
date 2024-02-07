@@ -31,11 +31,6 @@ def radixSort(array):
         countingSort(array, place)
         place *= 10
 
-
-data = [121, 432, 564, 23, 1, 45, 788]
-radixSort(data)
-print(data)
-
 class TestRadixSort(unittest.TestCase):
     def test_radixSort_sorted(self):
         data1 = [1, 2, 3, 4, 5]
